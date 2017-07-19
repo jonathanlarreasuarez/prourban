@@ -11,8 +11,8 @@ angular.module('ProUrban')
 		})
 		.when('/login', {
 			templateUrl: 'app/views/pages/login.html',
-			controller: 'appController'
-		});
-
+			controller: 'loginController'
+		})
+		.otherwise({ redirectTo: '/login' });
 	}
 ]);
