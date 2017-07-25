@@ -334,7 +334,7 @@ SOAPClient._getElementsByTagName = function(document, tagName)
 	}
 	catch (ex) {}
 	// old XML parser support
-	return document.getElementsByTagName(tagName);
+	return document.getElementsByTagNameNS("*", tagName);
 }
 // private: xmlhttp factory
 SOAPClient._getXmlHttp = function() 
