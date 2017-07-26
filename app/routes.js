@@ -13,9 +13,13 @@ angular.module('ProUrban')
 			templateUrl: 'app/views/pages/login.html',
 			controller: 'loginController'
 		})
-		.when('/proveedores', {
-			templateUrl: 'app/views/pages/administrador/proveedores.html'/*,
+		.when('/gastos', {
+			templateUrl: 'app/views/pages/administrador/gastos.html'/*,
 			controller: 'loginController'*/
+		})
+		.when('/proveedores', {
+			templateUrl: 'app/views/pages/administrador/proveedores.html',
+			controller: 'proveedorController'
 		})
 		.otherwise({ redirectTo: '/login' });
 	}
