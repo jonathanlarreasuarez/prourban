@@ -16,10 +16,15 @@ angular.module('ProUrban')
 			AuthenticationService.login($scope.usuario, $scope.clave)
 			.then(function(response) {
 				// MANEJO DE RESPUESTA
-				var data = JSON.parse(response.respuesta)[0];
-				
-				AuthenticationService.setCredentials(data);
-				$location.path('/');
+				response = JSON.parse(response.respuesta)
+				console.log(response);
+				if (response.codigo === 1) {
+					var data = response.datos[0];
+					AuthenticationService.setCredentials(data);
+					$location.path('/');
+				} else {
+					alert(response.mensaje);
+				}
 			}, function(err){
 				// MANEJO DE ERRORES
 			});

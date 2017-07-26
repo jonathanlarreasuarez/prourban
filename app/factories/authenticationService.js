@@ -1,12 +1,13 @@
 angular.module('ProUrban')
 .factory("AuthenticationService", ['$soap', '$rootScope', 'localStorageService',
 	function($soap, $rootScope, localStorageService) {
+
+		//	Url del servicio web
 		//var base_url = "https://modoux.com/server/view/server.php?wsdl";
 		var base_url = "http://localhost/server/view/server.php?wsdl";
 
 		var service = {};
 
-		service.init = init;
 		service.login = login;
 		service.setCredentials = setCredentials;
 		service.getCredentials = getCredentials;
@@ -14,25 +15,28 @@ angular.module('ProUrban')
 
 		return service;
 
-		function init() {
-			return isLoggedIn();
-		}
-
+		//	Recibe los parámetros del formulario de login
 		function login(usuario, clave) {
-			return $soap.post(base_url,"Auth",
-				{ usuario: usuario, clave: clave});
+			//	Realiza la llamada al servicio web enviando los parámetros
+			//	en formato JSON
+			return $soap.post(base_url,"Autenticacion",
+				{ usuario: usuario, clave: clave });
 		}
 
+		//	Setea los datos del usuario en localStorage para controlar la sesión,
+		//	y en rootScope para poder usar la información en cualquier vista
 		function setCredentials(data) {
 			localStorageService.set('usuario', data);
 			$rootScope.usuario = data.nombre_usuario;
 			$rootScope.nombre = fullName(data.primer_nombre, data.primer_apellido);
 		}
 
+		//	Consulta la información guardada en localStorage
 		function getCredentials(usuario, clave) {
 			return localStorageService.get('usuario');
 		}
 
+		//	Verifica si hay información (de usuario) en localStorage
 		function isLoggedIn() {
 			if (localStorageService.length() > 0) {
 				return true;
