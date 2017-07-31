@@ -15,12 +15,15 @@ angular.module('ProUrban')
 		})
 		.when('/gastos', {
 			templateUrl: 'app/views/pages/administrador/gastos.html'/*,
-			controller: 'loginController'*/
+			controller: 'cuentaXpagarController'*/
 		})
 		.when('/proveedores', {
 			templateUrl: 'app/views/pages/administrador/proveedores.html',
 			controller: 'proveedorController'
 		})
-		.otherwise({ redirectTo: '/login' });
+		.when('/404', {
+			templateUrl: 'app/views/pages/page_404.html'			
+		})
+		.otherwise({ redirectTo: '/404' });
 	}
 ]);

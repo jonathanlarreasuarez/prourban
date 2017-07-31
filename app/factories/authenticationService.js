@@ -1,11 +1,7 @@
 angular.module('ProUrban')
-.factory("AuthenticationService", ['$soap', '$rootScope', 'localStorageService',
-	function($soap, $rootScope, localStorageService) {
-
-		//	Url del servicio web
-		//var base_url = "https://modoux.com/server/view/server.php?wsdl";
-		var base_url = "http://localhost/server/view/server.php?wsdl";
-
+.factory("AuthenticationService", ['$soap', '$rootScope', 'localStorageService', 'AppConfig',
+	function($soap, $rootScope, localStorageService, AppConfig) {
+		console.log(AppConfig);
 		var service = {};
 
 		service.login = login;
@@ -19,7 +15,7 @@ angular.module('ProUrban')
 		function login(usuario, clave) {
 			//	Realiza la llamada al servicio web enviando los parámetros
 			//	en formato JSON
-			return $soap.post(base_url,"Autenticacion",
+			return $soap.post(AppConfig.apiUrl,"Autenticacion",
 				{ usuario: usuario, clave: clave });
 		}
 
