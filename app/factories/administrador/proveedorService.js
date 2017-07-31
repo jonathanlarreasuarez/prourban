@@ -5,19 +5,45 @@ angular.module('ProUrban')
 		var service = {};
 
 		service.getProveedores = getProveedores;
-		service.createProveedor = createProveedor;
+		service.insertarProveedor = insertarProveedor;
+		service.modificarProveedor = modificarProveedor;
+		service.eliminarProveedor = eliminarProveedor;
+		service.buscarProveedor = buscarProveedor;
 
 		return service;
 
 		function getProveedores() {
 			//	Realiza la llamada al servicio web enviando los parámetros
 			//	en formato JSON
-			return $soap.post(AppConfig.apiUrl,"ListaProveedores");
+			return $soap.post(AppConfig.apiUrl, "ListaProveedores");
 		}
 
-		function createProveedor(descripcion, ruc) {
-			return $soap.post(AppConfig.apiUrl,"CrearProveedor",
+		function insertarProveedor(descripcion, ruc) {
+			//	Realiza la llamada al servicio web enviando los parámetros
+			//	en formato JSON
+			return $soap.post(AppConfig.apiUrl, "InsertarProveedor",
 				{ descripcion: descripcion, ruc: ruc });
 		}
-	}
-]);
+
+		function buscarProveedor(id) {
+			//	Realiza la llamada al servicio web enviando los parámetros
+			//	en formato JSON
+			return $soap.post(AppConfig.apiUrl, "BuscarProveedor",
+				{ id: id });
+		}
+
+		function modificarProveedor(id, descripcion, ruc) {
+			//	Realiza la llamada al servicio web enviando los parámetros
+			//	en formato JSON
+			return $soap.post(AppConfig.apiUrl, "ModificarProveedor",
+					{ id: id, descripcion: descripcion, ruc: ruc });
+		}
+
+		function eliminarProveedor(id) {
+			//	Realiza la llamada al servicio web enviando los parámetros
+			//	en formato JSON
+			return $soap.post(AppConfig.apiUrl, "EliminarProveedor",
+				{ id: id });
+		}
+
+}]);
