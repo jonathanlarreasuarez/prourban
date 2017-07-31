@@ -3,6 +3,7 @@
 angular.module('ProUrban')
 .controller('loginController', ['$scope', '$rootScope', '$location', 'localStorageService', 'AuthenticationService',
 	function($scope, $rootScope, $location, localStorageService, AuthenticationService) {
+		
 		$scope.init = init;
 		$scope.login = login;
 

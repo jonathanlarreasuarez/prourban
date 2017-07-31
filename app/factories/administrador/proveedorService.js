@@ -1,14 +1,14 @@
 angular.module('ProUrban')
-.factory("ProveedorService", ['$soap', '$rootScope', 'localStorageService',
-	function($soap, $rootScope, localStorageService) {
-
-		//	Url del servicio web
-		//var base_url = "https://modoux.com/server/view/server.php?wsdl";
-		var base_url = "http://localhost/server/view/server.php?wsdl";
+.factory("ProveedorService", ['$soap', '$rootScope', 'localStorageService', 'AppConfig',
+	function($soap, $rootScope, localStorageService, AppConfig) {
 
 		var service = {};
 
 		service.getProveedores = getProveedores;
+		service.insertarProveedor = insertarProveedor;
+		service.modificarProveedor = modificarProveedor;
+		service.eliminarProveedor = eliminarProveedor;
+		service.buscarProveedor = buscarProveedor;
 
 		service.insertarProveedor = insertarProveedor;
 
@@ -23,7 +23,35 @@ angular.module('ProUrban')
 		function getProveedores() {
 			//	Realiza la llamada al servicio web enviando los parámetros
 			//	en formato JSON
-			return $soap.post(base_url,"ListaProveedores");
+			return $soap.post(AppConfig.apiUrl, "ListaProveedores");
+		}
+
+		function insertarProveedor(descripcion, ruc) {
+			//	Realiza la llamada al servicio web enviando los parámetros
+			//	en formato JSON
+			return $soap.post(AppConfig.apiUrl, "InsertarProveedor",
+				{ descripcion: descripcion, ruc: ruc });
+		}
+
+		function buscarProveedor(id) {
+			//	Realiza la llamada al servicio web enviando los parámetros
+			//	en formato JSON
+			return $soap.post(AppConfig.apiUrl, "BuscarProveedor",
+				{ id: id });
+		}
+
+		function modificarProveedor(id, descripcion, ruc) {
+			//	Realiza la llamada al servicio web enviando los parámetros
+			//	en formato JSON
+			return $soap.post(AppConfig.apiUrl, "ModificarProveedor",
+					{ id: id, descripcion: descripcion, ruc: ruc });
+		}
+
+		function eliminarProveedor(id) {
+			//	Realiza la llamada al servicio web enviando los parámetros
+			//	en formato JSON
+			return $soap.post(AppConfig.apiUrl, "EliminarProveedor",
+				{ id: id });
 		}
 
 		function insertarProveedor(descripcion, ruc) {
