@@ -3,7 +3,7 @@
 angular.module('ProUrban')
 .controller('proveedorController', ['$scope', '$rootScope', '$location', 'localStorageService', 'ProveedorService',
 	function($scope, $rootScope, $location, localStorageService, ProveedorService) {
-		
+
 		$scope.proceso = 1;	// 1: insertar
 
 		$scope.getProveedores = getProveedores;
@@ -16,11 +16,8 @@ angular.module('ProUrban')
 			ProveedorService.getProveedores()
 			.then(function(response) {
 				// MANEJO DE RESPUESTA
-<<<<<<< HEAD
-				response = JSON.parse(response.respuesta)
-=======
+
 				response = JSON.parse(response.respuesta);
->>>>>>> ronny
 
 				if (response.codigo === 1) {
 					$scope.data = response.datos;
@@ -66,7 +63,7 @@ angular.module('ProUrban')
 					$scope.getProveedores();
 					$scope.proceso = 1;	// 1: insertar
 				}
-				
+
 				alert(response.mensaje);
 			}, function(err){
 				// MANEJO DE ERRORES
@@ -83,7 +80,7 @@ angular.module('ProUrban')
 				if (response.codigo === 1) {
 					$scope.getProveedores();
 				}
-				
+
 				alert(response.mensaje);
 			}, function(err){
 				// MANEJO DE ERRORES
@@ -116,84 +113,5 @@ angular.module('ProUrban')
 
 		$scope.getProveedores();
 
-<<<<<<< HEAD
-		//insertar Proveedor
-		function insertarProveedor() {
-			// console.log('descripcion:::', ($scope.descripcion);
-			// console.log('ruc:::', $scope.ruc);
-			ProveedorService.insertarProveedor($scope.descripcion, $scope.ruc)
-			.then(function(response) {
-				// MANEJO DE RESPUESTA
-				response = JSON.parse(response.respuesta)
-
-				if (response.codigo === 1) {
-					$scope.data = response.datos;
-				} else {
-					alert(response.mensaje);
-				}
-			}, function(err){
-				// MANEJO DE ERRORES
-			});
-		}
-		//modificar Proveedor
-		function modificarProveedor() {
-			// console.log('descripcion:::', ($scope.descripcion);
-			// console.log('ruc:::', $scope.ruc);
-			ProveedorService.modificarProveedor($scope.modDescripcion, $scope.modRuc, $scope.modId)
-			.then(function(response) {
-				// MANEJO DE RESPUESTA
-				response = JSON.parse(response.respuesta)
-
-				if (response.codigo === 1) {
-					$scope.data = response.datos;
-				} else {
-					alert(response.mensaje);
-				}
-			}, function(err){
-				// MANEJO DE ERRORES
-			});
-		}
-
-		//eliminar Proveedor
-		function eliminarProveedor() {
-			console.log('descripcion:::', $scope.delId);
-			// console.log('ruc:::', $scope.ruc);
-			ProveedorService.eliminarProveedor($scope.delId)
-			.then(function(response) {
-				// MANEJO DE RESPUESTA
-				response = JSON.parse(response.respuesta)
-
-				if (response.codigo === 1) {
-					$scope.data = response.datos;
-				} else {
-					alert(response.mensaje);
-				}
-			}, function(err){
-				// MANEJO DE ERRORES
-			});
-		}
-
-		//buscar el Proveedor para luego ser modificado
-		function buscarProveedor() {
-			console.log('descripcion:::', $scope.modId);
-			// console.log('ruc:::', $scope.ruc);
-			ProveedorService.buscarProveedor($scope.modId)
-			.then(function(response) {
-				// MANEJO DE RESPUESTA
-				response = JSON.parse(response.respuesta)
-
-				if (response.codigo === 1) {
-					$scope.modi = response.datos;
-					console.log($scope.modi);
-				} else {
-					alert(response.mensaje);
-				}
-			}, function(err){
-				// MANEJO DE ERRORES
-			});
-		}
-
-=======
->>>>>>> ronny
 	}
 ]);
