@@ -3,66 +3,39 @@
 <!-- page content -->
 <div class="right_col" role="main">
 	<div class="row">
-		<div class="col-md-6 col-xs-12">
+		<div class="col-md-12 col-xs-12">
 			<div class="x_panel">
 				<div class="x_title">
-					<h2>Listados de Proveedores</h2>
+					<h2>Listados de Deudas de los Usuarios</h2>
 					<div class="clearfix"></div>
 					<div class="x_content">
 						<div class="dashboard-widget-content">
 							<div class="col-md-12 col-xs-12">
-							<h2 class="line_30"></h2>
-							<br>
+								<h2 class="line_30"></h2>
+								<br>
 								<table class="countries_list">
-												<thead>
-														<tr>
-																<td><strong>Descripción</strong></td>
-																<td class="fs15 fw700 text-right"><strong>Fecha</strong></td>
-																<td class="fs15 fw700 text-right"><strong>Total a Pagar</strong></td>
-																<td class="fs15 fw700 text-right"><strong>Nombre de la Empresa</strong></td>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>Guardiania</td>
-														<td class="fs15 fw700 text-right">2017-07-31</td>
-														<td class="fs15 fw700 text-right">$1500.00</td>
-														<td class="fs15 fw700 text-right">Empresa de Seguridad</td>
-													</tr>
-													<tr>
-														<td>Agua Potable</td>
-														<td class="fs15 fw700 text-right">2017-07-31</td>
-														<td class="fs15 fw700 text-right">$1500.00</td>
-														<td class="fs15 fw700 text-right">Interagua</td>
-													</tr>
-													<tr>
-														<td>Guardiania</td>
-														<td class="fs15 fw700 text-right">2017-07-31</td>
-														<td class="fs15 fw700 text-right">$1500.00</td>
-														<td class="fs15 fw700 text-right">Empresa de Seguridad</td>
-													</tr>
-													<tr>
-														<td>Agua Potable</td>
-														<td class="fs15 fw700 text-right">2017-07-31</td>
-														<td class="fs15 fw700 text-right">$1500.00</td>
-														<td class="fs15 fw700 text-right">Interagua</td>
-													</tr>
-													<tr>
-														<td>Guardiania</td>
-														<td class="fs15 fw700 text-right">2017-07-31</td>
-														<td class="fs15 fw700 text-right">$1500.00</td>
-														<td class="fs15 fw700 text-right">Empresa de Seguridad</td>
-													</tr>
-												</tbody>
-											</table>
+									<thead>
+										<tr>
+											<td><strong>Estado</strong></td>
+											<td class="fs15 fw700 text-right"><strong>Fecha Máxima Pago</strong></td>
+											<td class="fs15 fw700 text-right"><strong>Usuario</strong></td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr ng-repeat="item in data">
+											<td style="width:40px">{{item.estado}}</td>
+											<td>{{item.fecha_maxima_pago}}</td>
+											<td class="fs15 fw700 text-right">{{item.usuario_id}}</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
-
 </div>
 <!-- /page content -->
 <div footer></div>
