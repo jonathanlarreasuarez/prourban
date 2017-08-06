@@ -16,16 +16,16 @@
 								<table class="countries_list">
 									<thead>
 										<tr>
-											<td><strong>Estado</strong></td>
+											<td><strong>Usuario</strong></td>
 											<td class="fs15 fw700 text-right"><strong>Fecha Máxima Pago</strong></td>
-											<td class="fs15 fw700 text-right"><strong>Usuario</strong></td>
+											<td class="fs15 fw700 text-right"><strong>Estado</strong></td>
 										</tr>
 									</thead>
 									<tbody>
 										<tr ng-repeat="item in data">
-											<td style="width:40px">{{item.estado}}</td>
-											<td>{{item.fecha_maxima_pago}}</td>
-											<td class="fs15 fw700 text-right">{{item.usuario_id}}</td>
+											<td>{{item.primer_nombre}} {{item.primer_apellido}}</td>
+											<td class="fs15 fw700 text-right">{{item.fecha_maxima_pago}}</td>
+											<td class="fs15 fw700 text-right">{{item.estado}}</td>
 										</tr>
 									</tbody>
 								</table>
