@@ -7,23 +7,42 @@ angular.module('ProUrban')
 		$scope.proceso = 1;	// 1: insertar
 
 		$scope.getDeudas = getDeudas;
-		
+
 
 		function getDeudas() {
-			DeudasService.getDeudas()
-			.then(function(response) {
-				response = JSON.parse(response.respuesta);
+			if ($scope.proceso === 1 ) {
+				console.log('entro al inicio');
+				DeudasService.getDeudas("nulo")
+				.then(function(response) {
+					response = JSON.parse(response.respuesta);
 
-				if (response.codigo === 1) {
-					$scope.data = response.datos;
-				} else {
-					alert(response.mensaje);
-				}
-			}, function(err) {
-				// MANEJO DE ERRORES
-			});
-		}		
-		$scope.getDeudas();
+					if (response.codigo === 1) {
+						$scope.data = response.datos;
+					} else {
+						alert(response.mensaje);
+					}
+				}, function(err) {
+					// MANEJO DE ERRORES
+				});
+				$scope.proceso = 2;
+			}else {
+				console.log($scope.nombrexBuscar);
+				DeudasService.getDeudas($scope.nombrexBuscar)
+				.then(function(response) {
+					response = JSON.parse(response.respuesta);
+
+					if (response.codigo === 1) {
+						$scope.data = response.datos;
+					} else {
+						alert(response.mensaje);
+					}
+				}, function(err) {
+					// MANEJO DE ERRORES
+				});
+			}
+
+		}
+		$scope.getDeudas("nulo");
 
 	}
 ]);

@@ -5,14 +5,16 @@ angular.module('ProUrban')
 		var service = {};
 
 		service.getDeudas = getDeudas;
-		
+
 
 		return service;
 
-		function getDeudas() {
-			return $soap.post(AppConfig.apiUrl, "ListaDeudasUsuarios");
+		function getDeudas(nombrexBuscar) {
+			console.log('nombrexBuscar',nombrexBuscar);
+			return $soap.post(AppConfig.apiUrl, "ListaDeudasUsuarios",
+				{ nombrexBuscar: nombrexBuscar });
 		}
 
-		
+
 
 }]);
