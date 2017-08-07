@@ -14,8 +14,8 @@ angular.module('ProUrban')
 			controller: 'loginController'
 		})
 		.when('/gastos', {
-			templateUrl: 'app/views/pages/administrador/gastos.html'/*,
-			controller: 'cuentaXpagarController'*/
+			templateUrl: 'app/views/pages/administrador/gastos.html',
+			controller: 'cuentaxpagarController'
 		})
 		.when('/proveedores', {
 			templateUrl: 'app/views/pages/administrador/proveedores.html',
