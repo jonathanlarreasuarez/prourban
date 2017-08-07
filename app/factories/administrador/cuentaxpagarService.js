@@ -16,7 +16,8 @@ angular.module('ProUrban')
 		function getCuentasxpagar() {
 			//	Realiza la llamada al servicio web enviando los parámetros
 			//	en formato JSON
-			return $soap.post(AppConfig.apiUrl, "ListaDeudasUsuarios");
+			console.log("ok");
+			return $soap.post(AppConfig.apiUrl, "ListaCuentasxpagar");
 		}
 
 		function insertarCuentaxpagar(descripcion, ruc) {
