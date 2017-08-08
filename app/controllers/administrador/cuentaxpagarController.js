@@ -16,7 +16,7 @@ angular.module('ProUrban')
 			CuentaxpagarService.getCuentasxpagar()
 			.then(function(response) {
 				// MANEJO DE RESPUESTA
-				console.log(response);
+				
 				response = JSON.parse(response.respuesta);
 
 				if (response.codigo === 1) {
