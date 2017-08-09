@@ -52,11 +52,11 @@
 				</div>
 				<div class="x_content">
 					<br />
-					<form class="form-horizontal form-label-left">
+					<form novalidate id="cuentaxpagarForm" class="form-horizontal form-label-left" ng-submit="insertarCuentaxpagar()">
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12">Descripción</label>
 							<div class="col-md-9 col-sm-9 col-xs-12">
-								<input type="text" class="form-control" placeholder="Descripción">
+								<input type="text" class="form-control" placeholder="Descripción" ng-model="descripcion">
 							</div>
 						</div>
 						<div class="form-group">
@@ -64,7 +64,7 @@
 							<div class="col-md-9 col-sm-9 col-xs-12">
 								<div class="form-group">
 									<div class='input-group date' id='myDatepicker2'>
-										<input type='text' class="form-control" />
+										<input type='text' class="form-control" ng-model="fecha"/>
 										<span class="input-group-addon">
 											 <span class="glyphicon glyphicon-calendar"></span>
 										</span>
@@ -75,21 +75,21 @@
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12">Total a Pagar</label>
 							<div class="col-md-9 col-sm-9 col-xs-12">
-								<input type="text" class="form-control" placeholder="Total a Pagar">
+								<input type="text" class="form-control" placeholder="Total a Pagar" ng-model="total">
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12">Número de Referencia</label>
 							<div class="col-md-9 col-sm-9 col-xs-12">
-								<input type="text" class="form-control" placeholder="Número de Referencia">
+								<input type="text" class="form-control" placeholder="Número de Referencia" ng-model="numero_referencia">
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="control-label col-md-3 col-sm-3 col-xs-12">Proveedores</label>
 							<div class="col-md-9 col-sm-9 col-xs-12">
-								<select class="select2_single form-control" tabindex="-1">
-									<option>Seleccionar Proveedor</option>
-									<option ng-repeat="item in proveedores" value="{{item.id}}">{{item.descripcion}}</option>
+								<select class="select2_single form-control" tabindex="-1" 
+									ng-options="option.descripcion for option in proveedores track by option.id"
+									ng-model="proveedor">
 								</select>
 							</div>
 						</div>

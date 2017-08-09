@@ -19,11 +19,12 @@ angular.module('ProUrban')
 			return $soap.post(AppConfig.apiUrl, "ListaCuentasxpagar");
 		}
 
-		function insertarCuentaxpagar(descripcion, ruc) {
+		function insertarCuentaxpagar(parametros) {
 			//	Realiza la llamada al servicio web enviando los parámetros
 			//	en formato JSON
+			console.log(parametros);
 			return $soap.post(AppConfig.apiUrl, "InsertarCuentaxpagar",
-					{ descripcion: descripcion, ruc: ruc });
+					parametros);
 		}
 
 		function buscarCuentaxpagar(id) {
@@ -33,11 +34,11 @@ angular.module('ProUrban')
 					{ id: id });
 		}
 
-		function modificarCuentaxpagar(id, descripcion, ruc) {
+		function modificarCuentaxpagar(parametros) {
 			//	Realiza la llamada al servicio web enviando los parámetros
 			//	en formato JSON
 			return $soap.post(AppConfig.apiUrl, "ModificarCuentaxpagar",
-					{ id: id, descripcion: descripcion, ruc: ruc });
+					parametros);
 		}
 
 		function eliminarCuentaxpagar(id) {

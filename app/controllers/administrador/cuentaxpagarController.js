@@ -31,8 +31,16 @@ angular.module('ProUrban')
 
 		//	Insertar Proveedor
 		function insertarCuentaxpagar() {
+			var parametros = {
+				descripcion: $scope.descripcion,
+				fecha: $scope.fecha,
+				total: $scope.total,
+				numero_referencia: $scope.numero_referencia,
+				proveedor_id: $scope.proveedor.id
+			};
+
 			if ($scope.proceso === 1) {
-				CuentaxpagarService.insertarCuentaxpagar($scope.descripcion, $scope.ruc)
+				CuentaxpagarService.insertarCuentaxpagar(parametros)
 				.then(function(response) {
 					// MANEJO DE RESPUESTA
 					response = JSON.parse(response.respuesta);
@@ -47,13 +55,14 @@ angular.module('ProUrban')
 					// MANEJO DE ERRORES
 				});
 			} else if ($scope.proceso === 2) {
-				modificarCuentaxpagar();
+				parametros.id = $scope.id;
+				modificarCuentaxpagar(parametros);
 			}
 		}
+
 		//modificar Proveedor
-		function modificarCuentaxpagar() {
-			console.log($scope.id);
-			CuentaxpagarService.modificarCuentaxpagar($scope.id, $scope.descripcion, $scope.ruc)
+		function modificarCuentaxpagar(parametros) {
+			CuentaxpagarService.modificarCuentaxpagar(parametros)
 			.then(function(response) {
 				// MANEJO DE RESPUESTA
 				response = JSON.parse(response.respuesta);
@@ -98,7 +107,13 @@ angular.module('ProUrban')
 					var data = response.datos[0];
 					$scope.id = data.id;
 					$scope.descripcion = data.descripcion;
-					$scope.ruc = data.ruc;
+					$scope.fecha = data.fecha;
+					$scope.total = data.total;
+					$scope.numero_referencia = data.numero_referencia;
+					$scope.proveedor = {
+						id: data.proveedor_id,
+						name: data.nombre_proveedor
+					};
 					$scope.proceso = 2;	// 2: editar
 				}
 			}, function(err) {
@@ -115,6 +130,10 @@ angular.module('ProUrban')
 		ProveedorService.getProveedores()
 		.then(function(response) {
 			$scope.proveedores = JSON.parse(response.respuesta).datos;
+			$scope.proveedor = {
+				id: "-1",
+				name: "Seleccione una opción"
+			};
 		});
 
 	}
