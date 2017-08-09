@@ -49,29 +49,17 @@
 			</div>
 			<div class="x_content">
 				<br />
-<<<<<<< HEAD
-				<form novalidate class="form-horizontal form-label-left" method="post" ng-controller="proveedorController">
-					<div class="form-group">
-						<label class="control-label col-md-3 col-sm-3 col-xs-12">Nombre de Proveedor</label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-					  		<input type="text" class="form-control" placeholder="Nombre de Proveedor" ng-model="descripcion">
-=======
 				<form novalidate id="proveedorForm" class="form-horizontal form-label-left" ng-submit="insertarProveedor()">
 					<div class="form-group">
 						<label class="control-label col-md-3 col-sm-3 col-xs-12">Nombre de Proveedor</label>
 						<div class="col-md-9 col-sm-9 col-xs-12">
 					  		<input id="descripcion" type="text" class="form-control" placeholder="Nombre de Proveedor" ng-model="descripcion">
->>>>>>> ronny
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="control-label col-md-3 col-sm-3 col-xs-12">RUC</label>
 						<div class="col-md-9 col-sm-9 col-xs-12">
-<<<<<<< HEAD
-							<input type="text" class="form-control" placeholder="RUC" ng-model="ruc">
-=======
 							<input id="ruc" type="text" class="form-control" placeholder="RUC" ng-model="ruc">
->>>>>>> ronny
 						</div>
 					</div>
 					<div class="ln_solid"></div>
@@ -79,100 +67,13 @@
 						<div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
 							<button type="button" class="btn btn-primary">Cancel</button>
 							<button type="reset" class="btn btn-primary">Reset</button>
-<<<<<<< HEAD
-							<button type="submit" ng-click="insertarProveedor()"class="btn btn-success">Guardar</button>
-=======
 							<input type="submit" class="btn btn-success" value="Guardar"/>
->>>>>>> ronny
 						</div>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
-<<<<<<< HEAD
-=======
-
-	<div class="col-md-6 col-xs-12">
-		<div class="x_panel">
-			<div class="x_title">
-				<h2>Modificar Proveedores</h2>
-				<ul class="nav navbar-right panel_toolbox">
-					<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
-				</ul>
-				<div class="clearfix"></div>
-			</div>
-			<div class="x_content">
-				<br />
-				<form novalidate class="form-horizontal form-label-left" method="post" ng-controller="proveedorController">
-					<div class="form-group">
-						<label class="control-label col-md-3 col-sm-3 col-xs-12">Id Proveedor</label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-					  		<input type="text" class="form-control" placeholder="Id de Proveedor" ng-model="modId">
-						</div>
-					</div>
-					<div class="ln_solid"></div>
-					<div class="form-group">
-						<div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
-							<button type="submit" ng-click="buscarProveedor()"class="btn btn-success">Buscar</button>
-						</div>
-					</div>
-					<div class="ln_solid"></div>
-					<div class="form-group">
-						<label class="control-label col-md-3 col-sm-3 col-xs-12">Nombre del proveedor</label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<input type="text" class="form-control" placeholder="Nombre del proveedor" ng-model="modDescripcion" value="{{modi.descripcion}}">
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3 col-sm-3 col-xs-12">RUC</label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-							<input type="text" class="form-control" placeholder="RUC" ng-model="modRuc" value="{{modi.ruc}}">
-						</div>
-					</div>
-					<div class="ln_solid"></div>
-					<div class="form-group">
-						<div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
-							<button type="submit" ng-click="modificarProveedor()"class="btn btn-success">Modificar</button>
-						</div>
-					</div>
-
-				</form>
-			</div>
-		</div>
-	</div>
-
-
-	<div class="col-md-6 col-xs-12">
-		<div class="x_panel">
-			<div class="x_title">
-				<h2>Eliminar Proveedores</h2>
-				<ul class="nav navbar-right panel_toolbox">
-					<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
-				</ul>
-				<div class="clearfix"></div>
-			</div>
-			<div class="x_content">
-				<br />
-				<form novalidate class="form-horizontal form-label-left" method="post" ng-controller="proveedorController">
-					<div class="form-group">
-						<label class="control-label col-md-3 col-sm-3 col-xs-12">Id Proveedor</label>
-						<div class="col-md-9 col-sm-9 col-xs-12">
-								<input type="text" class="form-control" placeholder="Id de Proveedor" ng-model="delId">
-						</div>
-					</div>
-					<div class="ln_solid"></div>
-					<div class="form-group">
-						<div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
-							<button type="submit" ng-click="eliminarProveedor()"class="btn btn-success">Eliminar</button>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-
->>>>>>> parent of a8a8b25... resolver conflictos del merge
 </div>
 <!-- /page content -->
 <div footer></div>

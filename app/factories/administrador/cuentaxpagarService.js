@@ -16,35 +16,34 @@ angular.module('ProUrban')
 		function getCuentasxpagar() {
 			//	Realiza la llamada al servicio web enviando los parámetros
 			//	en formato JSON
-			console.log("ok");
 			return $soap.post(AppConfig.apiUrl, "ListaCuentasxpagar");
 		}
 
 		function insertarCuentaxpagar(descripcion, ruc) {
 			//	Realiza la llamada al servicio web enviando los parámetros
 			//	en formato JSON
-			return $soap.post(AppConfig.apiUrl, "insertarCuentaxpagar",
+			return $soap.post(AppConfig.apiUrl, "InsertarCuentaxpagar",
 					{ descripcion: descripcion, ruc: ruc });
 		}
 
 		function buscarCuentaxpagar(id) {
 			//	Realiza la llamada al servicio web enviando los parámetros
 			//	en formato JSON
-			return $soap.post(AppConfig.apiUrl, "buscarCuentaxpagar",
+			return $soap.post(AppConfig.apiUrl, "BuscarCuentaxpagar",
 					{ id: id });
 		}
 
 		function modificarCuentaxpagar(id, descripcion, ruc) {
 			//	Realiza la llamada al servicio web enviando los parámetros
 			//	en formato JSON
-			return $soap.post(AppConfig.apiUrl, "modificarCuentaxpagar",
+			return $soap.post(AppConfig.apiUrl, "ModificarCuentaxpagar",
 					{ id: id, descripcion: descripcion, ruc: ruc });
 		}
 
 		function eliminarCuentaxpagar(id) {
 			//	Realiza la llamada al servicio web enviando los parámetros
 			//	en formato JSON
-			return $soap.post(AppConfig.apiUrl, "eliminarCuentaxpagar",
+			return $soap.post(AppConfig.apiUrl, "EliminarCuentaxpagar",
 					{ id: id });
 		}
 	}

@@ -6,7 +6,7 @@
 		<div class="col-md-6 col-xs-12">
 			<div class="x_panel">
 				<div class="x_title">
-					<h2>Listados de Gastos Pendientes</h2>            
+					<h2>Gastos Pendientes</h2>
 					<div class="clearfix"></div>
 					<div class="x_content">
 						<div class="dashboard-widget-content">
@@ -88,12 +88,8 @@
 							<label class="control-label col-md-3 col-sm-3 col-xs-12">Proveedores</label>
 							<div class="col-md-9 col-sm-9 col-xs-12">
 								<select class="select2_single form-control" tabindex="-1">
-									<option></option>
-									<option value="AK">Empresa de Seguridad</option>
-									<option value="HI">Interagua</option>
-									<option value="CA">CNEL</option>
-									<option value="NV">Jardinero</option>
-									<option value="OR">Papelesa</option>
+									<option>Seleccionar Proveedor</option>
+									<option ng-repeat="item in proveedores" value="{{item.id}}">{{item.descripcion}}</option>
 								</select>
 							</div>
 						</div>
@@ -143,5 +139,3 @@
 		$('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
 	});
 </script>
-<!-- Custom Theme Scripts -->
-<script src="../build/js/custom.min.js"></script>

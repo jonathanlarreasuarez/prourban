@@ -1,7 +1,6 @@
 angular.module('ProUrban')
 .factory("AuthenticationService", ['$soap', '$rootScope', 'localStorageService', 'AppConfig',
 	function($soap, $rootScope, localStorageService, AppConfig) {
-		console.log(AppConfig);
 		var service = {};
 
 		service.login = login;

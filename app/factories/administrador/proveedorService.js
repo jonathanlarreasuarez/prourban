@@ -53,29 +53,5 @@ angular.module('ProUrban')
 			return $soap.post(AppConfig.apiUrl, "EliminarProveedor",
 				{ id: id });
 		}
-
-		function insertarProveedor(descripcion, ruc) {
-			//	Realiza la llamada al servicio web enviando los parámetros
-			//	en formato JSON
-			return $soap.post(base_url,"insertarProveedor", {descripcion: descripcion, ruc: ruc});
-		}
-
-		function buscarProveedor(id) {
-			//	Realiza la llamada al servicio web enviando los parámetros
-			//	en formato JSON
-			return $soap.post(base_url,"buscarProveedor", {id: id});
-		}
-
-		function modificarProveedor(descripcion, ruc, id) {
-			//	Realiza la llamada al servicio web enviando los parámetros
-			//	en formato JSON
-			return $soap.post(base_url,"modificarProveedor", {descripcion: descripcion, ruc: ruc, id: id});
-		}
-
-		function eliminarProveedor(id) {
-			//	Realiza la llamada al servicio web enviando los parámetros
-			//	en formato JSON
-			return $soap.post(base_url,"eliminarProveedor", {id: id});
-		}
-
-}]);
+	}
+]);

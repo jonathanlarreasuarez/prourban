@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('ProUrban')
-.controller('cuentaxpagarController', ['$scope', '$rootScope', '$location', 'localStorageService', 'CuentaxpagarService',
-	function($scope, $rootScope, $location, localStorageService, CuentaxpagarService) {
+.controller('cuentaxpagarController', ['$scope', '$rootScope', '$location', 'localStorageService', 'CuentaxpagarService', 'ProveedorService',
+	function($scope, $rootScope, $location, localStorageService, CuentaxpagarService, ProveedorService) {
 
 		$scope.proceso = 1;	// 1: insertar
 
@@ -112,6 +112,10 @@ angular.module('ProUrban')
 		}
 
 		$scope.getCuentasxpagar();
+		ProveedorService.getProveedores()
+		.then(function(response) {
+			$scope.proveedores = JSON.parse(response.respuesta).datos;
+		});
 
 	}
 ]);
