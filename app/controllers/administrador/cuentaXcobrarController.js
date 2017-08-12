@@ -1,18 +1,18 @@
 'use strict';
 
 angular.module('ProUrban')
-.controller('deudasController', ['$scope', '$rootScope', '$location', 'localStorageService', 'DeudasService',
-	function($scope, $rootScope, $location, localStorageService, DeudasService) {
+.controller('cuentaXcobrarController', ['$scope', '$rootScope', '$location', 'localStorageService', 'cuentaXcobrarService',
+	function($scope, $rootScope, $location, localStorageService, cuentaXcobrarService) {
 
 		$scope.proceso = 1;	// 1: insertar
 
-		$scope.getDeudas = getDeudas;
+		$scope.getCuentaXcobrar = getCuentaXcobrar;
 
 
-		function getDeudas() {
+		function getCuentaXcobrar() {
 			if ($scope.proceso === 1 ) {
 				console.log('entro al inicio');
-				DeudasService.getDeudas("nulo")
+				cuentaXcobrarService.getCuentaXcobrar("nulo")
 				.then(function(response) {
 					response = JSON.parse(response.respuesta);
 
@@ -27,7 +27,7 @@ angular.module('ProUrban')
 				$scope.proceso = 2;
 			}else {
 				console.log($scope.nombrexBuscar);
-				DeudasService.getDeudas($scope.nombrexBuscar)
+				cuentaXcobrarService.getCuentaXcobrar($scope.nombrexBuscar)
 				.then(function(response) {
 					response = JSON.parse(response.respuesta);
 
@@ -42,7 +42,7 @@ angular.module('ProUrban')
 			}
 
 		}
-		$scope.getDeudas("nulo");
+		$scope.getCuentaXcobrar("nulo");
 
 	}
 ]);
