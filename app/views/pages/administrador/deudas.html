@@ -3,10 +3,6 @@
 <!-- page content -->
 <div class="right_col" role="main">
 	<div class="row">
-
-
-
-
 		<div class="col-md-12 col-xs-12">
 			<div class="x_panel">
 				<div class="x_title">
@@ -34,15 +30,21 @@
 									<thead>
 										<tr>
 											<td><strong>Usuario</strong></td>
+											<td class="fs15 fw700 text-right"><strong>Cédula</strong></td>
 											<td class="fs15 fw700 text-right"><strong>Fecha Máxima Pago</strong></td>
 											<td class="fs15 fw700 text-right"><strong>Estado</strong></td>
+											<td class="text-center"><strong>Acciones</strong></td>
 										</tr>
 									</thead>
 									<tbody>
 										<tr ng-repeat="item in data">
 											<td>{{item.primer_nombre}} {{item.primer_apellido}}</td>
+											<td class="fs15 fw700 text-right">{{item.cedula}}</td>
 											<td class="fs15 fw700 text-right">{{item.fecha_maxima_pago}}</td>
 											<td class="fs15 fw700 text-right">{{item.estado}}</td>
+											<td class="text-center">
+											<button ng-click="GenerarFactura(item.id)"><a href="#!/factura">Pagar</a></button>
+										</td>
 										</tr>
 									</tbody>
 								</table>
