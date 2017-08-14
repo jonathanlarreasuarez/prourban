@@ -25,6 +25,10 @@ angular.module('ProUrban')
 			templateUrl: 'app/views/pages/administrador/deudas.html',
 			controller: 'deudasController'
 		})
+		.when('/reservas', {
+			templateUrl: 'app/views/pages/administrador/reservas.html',
+			controller: 'reservaController'
+		})
 		.when('/404', {
 			templateUrl: 'app/views/pages/page_404.html'			
 		})
