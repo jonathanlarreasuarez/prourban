@@ -26,8 +26,8 @@ angular.module('ProUrban')
 			controller: 'cuentaXcobrarController'
 		})
 		.when('/factura', {
-			templateUrl: 'app/views/pages/administrador/factura.html'/*,
-			controller: 'cuentaXcobrarController'*/
+			templateUrl: 'app/views/pages/administrador/factura.html',
+			controller: 'facturaController'
 		})
 		.when('/404', {
 			templateUrl: 'app/views/pages/page_404.html'			

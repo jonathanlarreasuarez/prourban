@@ -24,12 +24,12 @@
                       </div>
                       <!-- info row -->
                       <div class="row invoice-info">
-                        <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                        <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" ng-submit="getCabeceraFactura()">
                           <div class="form-group">
                             <label class="col-md-3 col-sm-3 col-xs-12" for="first-name">Nombres y Apellidos
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12">
+                              <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12" ng-model="primer_nombre">
                             </div>
                           </div>
 
@@ -37,7 +37,7 @@
                             <label class="col-md-3 col-sm-3 col-xs-12" for="first-name">Cédula
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" id="cedula" required="required" class="form-control col-md-7 col-xs-12">
+                              <input type="text" id="cedula" required="required" class="form-control col-md-7 col-xs-12"  ng-model="cedula">
                             </div>
                           </div>
 
