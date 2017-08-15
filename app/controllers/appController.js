@@ -20,7 +20,6 @@ angular.module('ProUrban')
 			if (!AuthenticationService.isLoggedIn()) {
 				$location.path('/login');
 			} else {
-				console.log('SI');
 		    	$location.path('/');
 		    }
 		}

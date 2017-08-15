@@ -55,13 +55,22 @@ angular.module('ProUrban')
 					// MANEJO DE ERRORES
 				});
 			} else if ($scope.proceso === 2) {
-				parametros.id = $scope.id;
+				//Object.assign({id: $scope.id}, parametros);
+				//parametros.id = $scope.id;
 				modificarCuentaxpagar(parametros);
 			}
 		}
 
 		//modificar Proveedor
 		function modificarCuentaxpagar(parametros) {
+			var parametros = {
+				id: $scope.id,
+				descripcion: parametros.descripcion,
+				fecha: parametros.fecha,
+				total: parametros.total,
+				numero_referencia: parametros.numero_referencia,
+				proveedor_id: parametros.proveedor.id
+			};
 			CuentaxpagarService.modificarCuentaxpagar(parametros)
 			.then(function(response) {
 				// MANEJO DE RESPUESTA

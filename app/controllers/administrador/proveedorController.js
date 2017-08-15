@@ -52,7 +52,6 @@ angular.module('ProUrban')
 		}
 		//modificar Proveedor
 		function modificarProveedor() {
-			console.log($scope.id);
 			ProveedorService.modificarProveedor($scope.id, $scope.descripcion, $scope.ruc)
 			.then(function(response) {
 				// MANEJO DE RESPUESTA

@@ -23,7 +23,11 @@ angular.module('ProUrban')
 		})
 		.when('/deudas', {
 			templateUrl: 'app/views/pages/administrador/deudas.html',
-			controller: 'deudasController'
+			controller: 'cuentaXcobrarController'
+		})
+		.when('/factura', {
+			templateUrl: 'app/views/pages/administrador/factura.html',
+			controller: 'facturaController'
 		})
 		.when('/reservas', {
 			templateUrl: 'app/views/pages/administrador/reservas.html',

@@ -10,14 +10,6 @@ angular.module('ProUrban')
 		service.eliminarProveedor = eliminarProveedor;
 		service.buscarProveedor = buscarProveedor;
 
-		service.insertarProveedor = insertarProveedor;
-
-		service.modificarProveedor = modificarProveedor;
-
-		service.eliminarProveedor = eliminarProveedor;
-
-		service.buscarProveedor = buscarProveedor;
-
 		return service;
 
 		function getProveedores() {

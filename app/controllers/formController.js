@@ -8,7 +8,6 @@ angular.module('ProUrban')
 		function callEvent() {
 			testService.ListaEventosXcategoria($scope.categoria).then(function(response) {
 				$scope.response = response;
-				console.log($scope.response);
 			});
 		}
 	}
