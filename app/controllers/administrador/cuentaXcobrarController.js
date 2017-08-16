@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ProUrban')
-.controller('cuentaXcobrarController', ['$scope', '$rootScope', '$location', 'localStorageService', 'cuentaXcobrarService', 'FacturaService',
+.controller('cuentaxcobrarController', ['$scope', '$rootScope', '$location', 'localStorageService', 'cuentaXcobrarService', 'FacturaService',
 	function($scope, $rootScope, $location, localStorageService, cuentaXcobrarService, FacturaService) {
 
 		$scope.proceso = 1;	// 1: insertar
@@ -26,7 +26,7 @@ angular.module('ProUrban')
 					// MANEJO DE ERRORES
 				});
 				$scope.proceso = 2;
-			}else {
+			} else {
 				cuentaXcobrarService.getCuentaXcobrar($scope.nombrexBuscar)
 				.then(function(response) {
 					response = JSON.parse(response.respuesta);
@@ -40,7 +40,6 @@ angular.module('ProUrban')
 					// MANEJO DE ERRORES
 				});
 			}
-
 		}
 
 		function buscarCuentaXcobrar(id) {

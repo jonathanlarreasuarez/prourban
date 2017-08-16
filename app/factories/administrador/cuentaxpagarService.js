@@ -22,7 +22,6 @@ angular.module('ProUrban')
 		function insertarCuentaxpagar(parametros) {
 			//	Realiza la llamada al servicio web enviando los parámetros
 			//	en formato JSON
-			console.log(parametros);
 			return $soap.post(AppConfig.apiUrl, "InsertarCuentaxpagar",
 					parametros);
 		}
