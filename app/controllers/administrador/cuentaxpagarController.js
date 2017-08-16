@@ -57,19 +57,19 @@ angular.module('ProUrban')
 			} else if ($scope.proceso === 2) {
 				//Object.assign({id: $scope.id}, parametros);
 				//parametros.id = $scope.id;
-				modificarCuentaxpagar(parametros);
+				modificarCuentaxpagar($scope.id, parametros);
 			}
 		}
 
 		//modificar Proveedor
-		function modificarCuentaxpagar(parametros) {
+		function modificarCuentaxpagar(id, parametros) {
 			var parametros = {
-				id: $scope.id,
+				id: id,
 				descripcion: parametros.descripcion,
 				fecha: parametros.fecha,
 				total: parametros.total,
 				numero_referencia: parametros.numero_referencia,
-				proveedor_id: parametros.proveedor.id
+				proveedor_id: parametros.proveedor_id
 			};
 			CuentaxpagarService.modificarCuentaxpagar(parametros)
 			.then(function(response) {

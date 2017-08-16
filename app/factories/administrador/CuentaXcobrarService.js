@@ -7,20 +7,17 @@ angular.module('ProUrban')
 		service.getCuentaXcobrar = getCuentaXcobrar;
 		service.buscarCuentaXcobrar = buscarCuentaXcobrar;
 
-
 		return service;
+		
 
 		function getCuentaXcobrar(nombrexBuscar) {
 			return $soap.post(AppConfig.apiUrl, "ListaCuentaxcobrar",
 				{ nombrexBuscar: nombrexBuscar });
 		}
 
-
 		function buscarCuentaXcobrar(id) {
 			return $soap.post(AppConfig.apiUrl, "BuscarCuentaxcobrar",
 				{ id: id });
 		}
-
-
-
-}]);
+	}
+]);
