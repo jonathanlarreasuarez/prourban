@@ -50,7 +50,8 @@ angular.module('ProUrban')
 				console.log(response);
 				if (response.codigo === 1) {
 					var data = response.datos[0];
-					FacturaService.init(data.id);
+					var conceptopago = 1;
+					FacturaService.init(data.id, conceptopago);
 					$location.path('factura');
 				} else {
 					alert(response.mensaje);

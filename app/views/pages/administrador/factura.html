@@ -18,7 +18,7 @@
                         <div class="col-xs-12 invoice-header">
                           <h3> <small class="pull-right">R.U.C.: 0982014520001</small></h3><br>
                           <h3> <small class="pull-right">FACTURA</small></h3><br>
-                          <h3> <small class="pull-right">Nº 001 - 0000010</small></h3>
+                          <h3> <small class="pull-right" ng-model= "numFactura">{{numFactura}}</small></h3>
                         </div>
                         <!-- /.col -->
                       </div>
@@ -29,7 +29,7 @@
                             <label class="col-md-3 col-sm-3 col-xs-12" for="first-name">Nombres y Apellidos
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12" ng-model="nombre">
+                              <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12" ng-model="nombreF">
                             </div>
                           </div>
 
@@ -67,9 +67,9 @@
                             <tbody>
                               <tr>
                                 <td>1</td>
-                                <td class="fs15 fw700 text-right">Concepto de Pago de Alicuotas</td>
-                                <td class="fs15 fw700 text-right">$40,00</td>
-                                <td class="fs15 fw700 text-right">$40.00</td>
+                                <td class="fs15 fw700 text-right">{{descripcionDetalle}}</td>
+                                <td class="fs15 fw700 text-right">$ {{valorDetalle}}</td>
+                                <td class="fs15 fw700 text-right">$ {{valorDetalle}}</td>
                               </tr>
                             </tbody>
                           </table>
@@ -81,7 +81,7 @@
                       <div class="row">
                         <!-- accepted payments column -->
                         <div class="col-xs-9">
-                          <p class="lead">Son: <br></p>
+                          <p class="lead"> <br></p>
                         </div>
                         <!-- /.col -->
                         <div class="col-xs-3">
@@ -91,21 +91,24 @@
                               <tbody>
                                 <tr>
                                   <th style="width:50%">Subtotal:</th>
-                                  <td>$40.00</td>
+                                  <td>${{valorDetalle}}</td>
                                 </tr>
                                 <tr>
                                   <th>IVA (12%)</th>
-                                  <td>$00.00</td>
+                                  <td>${{ivaDetalle}}</td>
                                 </tr>
                                 <tr>
                                   <th>Total:</th>
-                                  <td>$40.00</td>
+                                  <td>${{totalDetalle}}</td>
                                 </tr>
                               </tbody>
                             </table>
                           </div>
                         </div>
                         <!-- /.col -->
+                      </div>
+                      <div class="row">
+                        <button type="button" class="btn btn-success" ng-click="pagarFactura()">Pagar</button>
                       </div>
                       <!-- /.row -->
                     </section>

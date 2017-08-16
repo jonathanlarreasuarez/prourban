@@ -5,16 +5,42 @@ angular.module('ProUrban')
 		var service = {};
 
 		service.buscarCabeceraFactura = buscarCabeceraFactura;
+		service.buscarDetalleFactura = buscarDetalleFactura;
+		service.pagarFactura = pagarFactura;
+		service.guardarCabeceraFactura = guardarCabeceraFactura;
+		service.guardarDetalleFactura = guardarDetalleFactura;
 		service.init = init;
 
 		return service;
 
-		function init(id) {
+		function init(id, conceptopago) {
 			localStorageService.set('idCabeceraFactura', id);
+			localStorageService.set('idconceptopago', conceptopago);
 		}
 
 		function buscarCabeceraFactura(id) {
 			return $soap.post(AppConfig.apiUrl, "CabeceraFactura",
 				{ id: id });
 		}
+
+		function buscarDetalleFactura(id) {
+			return $soap.post(AppConfig.apiUrl, "DetalleFactura",
+				{ id: id });
+		}
+
+		function pagarFactura(id) {
+			return $soap.post(AppConfig.apiUrl, "PagarFactura",
+					{ id: id });
+		}
+
+		function guardarCabeceraFactura(fecha_factura, numero_factura, subtotal, iva, total, formapago_id, usuario_id) {
+			return $soap.post(AppConfig.apiUrl, "GuardarCabeceraFactura",
+					{ fecha_factura: fecha_factura, numero_factura: numero_factura, subtotal: subtotal, iva: iva, total: total, formapago_id: formapago_id, usuario_id: usuario_id });
+		}
+
+		function guardarDetalleFactura(valor, conceptopago_id, factura_id) {
+			return $soap.post(AppConfig.apiUrl, "GuardarDetalleFactura",
+					{ valor: valor, conceptopago_id: conceptopago_id, factura_id: factura_id});
+		}
+
 }]);
