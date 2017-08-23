@@ -14,7 +14,11 @@ angular.module('ProUrban')
 			controller: 'loginController'
 		})
 		.when('/gastos', {
-			templateUrl: 'app/views/pages/administrador/gastos.html',
+			templateUrl: 'app/views/pages/administrador/gastos/gastos.html',
+			controller: 'cuentaxpagarController'
+		})
+		.when('/form_gastos', {
+			templateUrl: 'app/views/pages/administrador/gastos/form_gastos.html',
 			controller: 'cuentaxpagarController'
 		})
 		.when('/proveedores', {
@@ -22,7 +26,7 @@ angular.module('ProUrban')
 			controller: 'proveedorController'
 		})
 		.when('/deudas', {
-			templateUrl: 'app/views/pages/administrador/deudas.html',
+			templateUrl: 'app/views/pages/administrador/deudas/deudas.html',
 			controller: 'cuentaxcobrarController'
 		})
 		.when('/factura', {

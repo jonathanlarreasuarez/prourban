@@ -12,7 +12,6 @@ angular.module('ProUrban')
 
 		function getCuentaXcobrar() {
 			if ($scope.proceso === 1 ) {
-				console.log('entro al inicio');
 				cuentaXcobrarService.getCuentaXcobrar("nulo")
 				.then(function(response) {
 					response = JSON.parse(response.respuesta);
@@ -46,7 +45,7 @@ angular.module('ProUrban')
 			cuentaXcobrarService.buscarCuentaXcobrar(id)
 			.then(function(response) {
 				response = JSON.parse(response.respuesta);
-				console.log(response);
+
 				if (response.codigo === 1) {
 					var data = response.datos[0];
 					var conceptopago = 1;
@@ -60,7 +59,7 @@ angular.module('ProUrban')
 			});
 		}
 
-		$scope.getCuentaXcobrar("nulo");
+		$scope.getCuentaXcobrar();
 
 	}
 ]);

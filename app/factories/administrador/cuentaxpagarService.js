@@ -36,7 +36,6 @@ angular.module('ProUrban')
 		function modificarCuentaxpagar(parametros) {
 			//	Realiza la llamada al servicio web enviando los parámetros
 			//	en formato JSON
-			console.log(parametros);
 			return $soap.post(AppConfig.apiUrl, "ModificarCuentaxpagar",
 					parametros);
 		}

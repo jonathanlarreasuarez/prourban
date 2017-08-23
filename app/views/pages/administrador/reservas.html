@@ -39,12 +39,12 @@
 									</thead>
 									<tbody>
 										<tr ng-repeat="item in data">
-											<td>{{item.primer_nombre}} {{item.primer_apellido}}</td>
+											<td>{{item.nombre}}</td>
 											<td class="fs15 fw700 text-right">{{item.cedula}}</td>
 											<td>{{item.descripcion}}</td>
 											<td class="fs15 fw700 text-right">{{item.fecha_solicitud}}</td>
 											<td class="fs15 fw700 text-right">{{item.fecha_reserva}}</td>
-											<td><button class="btn btn-primary" ng-click="">Pagar</button></td>
+											<td><button class="btn btn-primary" ng-click="buscarPreReserva(item.id)">Pagar</button></td>
 										</tr>
 									</tbody>
 								</table>
