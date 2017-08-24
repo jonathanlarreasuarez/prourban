@@ -47,7 +47,8 @@ angular.module('ProUrban')
 
 					if (response.codigo === 1) {
 						clearForm();
-						$scope.getCuentasxpagar();
+						//$scope.getCuentasxpagar();
+						$location.path('gastos');
 					}
 
 					alert(response.mensaje);
@@ -100,7 +101,7 @@ angular.module('ProUrban')
 				}
 
 				alert(response.mensaje);
-			}, function(err){
+			}, function(err) {
 				// MANEJO DE ERRORES
 			});
 		}
