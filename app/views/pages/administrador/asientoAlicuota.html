@@ -26,18 +26,13 @@
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-
-											<td>Caja</td>
-											<td class="fs15 fw700 text-right"></td>
-											<td class="fs15 fw700 text-right">500</td>
-											<td class="fs15 fw700 text-right">500</td>
-										</tr>
-										<tr>
-											<td></td>
-											<td class="fs15 fw700 text-right">Alicuotas</td>
-											<td class="fs15 fw700 text-right">100</td>
-											<td class="fs15 fw700 text-right">50</td>
+										<tr ng-repeat="item in data">
+											<td ng-if= "item.tipo === 'activo'">{{item.descripcion}}</td>
+											<td ng-if= "item.tipo === 'activo'"></td>
+											<td class="fs15 fw700 text-right" ng-if= "item.tipo === 'pasivo'"></td>
+											<td class="fs15 fw700 text-right" ng-if= "item.tipo === 'pasivo'">{{item.descripcion}}</td>
+											<td class="fs15 fw700 text-right">{{item.saldo_inicial}}</td>
+											<td class="fs15 fw700 text-right">{{item.saldo}}</td>
 										</tr>
 									</tbody>
 								</table>
@@ -51,4 +46,3 @@
 </div>
 <!-- /page content -->
 <div footer></div>
-

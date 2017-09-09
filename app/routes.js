@@ -3,7 +3,7 @@
 angular.module('ProUrban')
 .config(['$routeProvider',
 	function($routeProvider) {
-		
+
 		$routeProvider
 		.when('/', {
 			templateUrl: 'app/views/pages/administrador/index.html',
@@ -38,11 +38,11 @@ angular.module('ProUrban')
 			controller: 'reservaController'
 		})
 		.when('/asientoAlicuota', {
-			templateUrl: 'app/views/pages/administrador/asientoAlicuota.html'/*,
-			controller: 'reservaController'*/
+			templateUrl: 'app/views/pages/administrador/asientoAlicuota.html',
+			controller: 'asientoController'
 		})
 		.when('/404', {
-			templateUrl: 'app/views/pages/page_404.html'			
+			templateUrl: 'app/views/pages/page_404.html'
 		})
 		.otherwise({ redirectTo: '/404' });
 	}
