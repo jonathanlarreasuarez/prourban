@@ -37,9 +37,12 @@ angular.module('ProUrban')
 			templateUrl: 'app/views/pages/administrador/reservas.html',
 			controller: 'reservaController'
 		})
-		.when('/asientoAlicuota', {
-			templateUrl: 'app/views/pages/administrador/asientoAlicuota.html',
+		.when('/cuentas', {
+			templateUrl: 'app/views/pages/administrador/cuentas.html',
 			controller: 'asientoController'
+		})
+		.when('/asientoContable', {
+			templateUrl: 'app/views/pages/administrador/asientoContable.html'
 		})
 		.when('/404', {
 			templateUrl: 'app/views/pages/page_404.html'
