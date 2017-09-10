@@ -96,6 +96,7 @@ angular.module('ProUrban')
 					var data = response.datos[0];
 					console.log(response);
 					$scope.guardarDetalleFactura(data.id);
+					console.log('aqui va el asiento');
 					$scope.guardarAsiento(data.id);
 					console.log('se guardo la cabecera de la factura correctamente');
 				} else {
@@ -112,7 +113,6 @@ angular.module('ProUrban')
 			FacturaService.guardarDetalleFactura($scope.valorDetalle, conceptoId ,idFactura)
 			.then(function(response) {
 				// MANEJO DE RESPUESTA
-
 				response = JSON.parse(response.respuesta);
 
 				if (response.codigo === 1) {
@@ -131,7 +131,8 @@ angular.module('ProUrban')
 			var date = new Date();
 			var dateFinal = date.getFullYear() + "/" + (date.getMonth() +1) + "/" + date.getDate();
 			var conceptoPago = "Alicuota"
-			FacturaService.guardarDetalleFactura(dateFinal, $scope.valorDetalle, conceptoPago ,idFactura)
+			console.log("conceptoPago:::",conceptoPago);
+			FacturaService.guardarAsiento(dateFinal, $scope.valorDetalle, conceptoPago ,idFactura)
 			.then(function(response) {
 				// MANEJO DE RESPUESTA
 
