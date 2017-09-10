@@ -10,7 +10,7 @@ angular.module('ProUrban')
 		$scope.pagarFactura = pagarFactura;
 		$scope.guardarCabeceraFactura = guardarCabeceraFactura;
 		$scope.guardarDetalleFactura = guardarDetalleFactura;
-
+		$scope.guardarAsiento = guardarAsiento;
 		function buscarCabeceraFactura() {
 			var id = localStorageService.get('idCabeceraFactura');
 
@@ -96,6 +96,7 @@ angular.module('ProUrban')
 					var data = response.datos[0];
 					console.log(response);
 					$scope.guardarDetalleFactura(data.id);
+					$scope.guardarAsiento(data.id);
 					console.log('se guardo la cabecera de la factura correctamente');
 				} else {
 					alert(response.mensaje);
@@ -115,8 +116,30 @@ angular.module('ProUrban')
 				response = JSON.parse(response.respuesta);
 
 				if (response.codigo === 1) {
-					$location.path('deudas');
+					// $location.path('deudas');
 					console.log('se guardo el detalle de la factura correctamente');
+				} else {
+					alert(response.mensaje);
+				}
+			}, function(err) {
+				// MANEJO DE ERRORES
+			});
+		}
+
+		// guardar detalle factura
+		function guardarAsiento(idFactura) {
+			var date = new Date();
+			var dateFinal = date.getFullYear() + "/" + (date.getMonth() +1) + "/" + date.getDate();
+			var conceptoPago = "Alicuota"
+			FacturaService.guardarDetalleFactura(dateFinal, $scope.valorDetalle, conceptoPago ,idFactura)
+			.then(function(response) {
+				// MANEJO DE RESPUESTA
+
+				response = JSON.parse(response.respuesta);
+
+				if (response.codigo === 1) {
+					$location.path('deudas');
+					console.log('se guardo el asiento correctamente');
 				} else {
 					alert(response.mensaje);
 				}

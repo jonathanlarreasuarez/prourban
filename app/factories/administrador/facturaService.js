@@ -9,6 +9,8 @@ angular.module('ProUrban')
 		service.pagarFactura = pagarFactura;
 		service.guardarCabeceraFactura = guardarCabeceraFactura;
 		service.guardarDetalleFactura = guardarDetalleFactura;
+		service.guardarAsiento = guardarAsiento;
+
 		service.init = init;
 
 		return service;
@@ -42,5 +44,11 @@ angular.module('ProUrban')
 			return $soap.post(AppConfig.apiUrl, "GuardarDetalleFactura",
 					{ valor: valor, conceptopago_id: conceptopago_id, factura_id: factura_id});
 		}
+
+		function guardarAsiento(fecha, valor, conceptoPago, factura_id) {
+			return $soap.post(AppConfig.apiUrl, "GuardarAsiento",
+					{ fecha:fecha, valor: valor, conceptoPago: conceptoPago, factura_id: factura_id});
+		}
+
 
 }]);
