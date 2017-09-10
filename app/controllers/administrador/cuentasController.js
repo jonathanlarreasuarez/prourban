@@ -1,13 +1,13 @@
 'use strict';
 
 angular.module('ProUrban')
-.controller('asientoController', ['$scope', '$rootScope', '$location', 'localStorageService', 'AsientoService',
-	function($scope, $rootScope, $location, localStorageService, AsientoService) {
+.controller('cuentasController', ['$scope', '$rootScope', '$location', 'localStorageService', 'CuentasService',
+	function($scope, $rootScope, $location, localStorageService, CuentasService) {
 
 		$scope.getCuentas = getCuentas;
 
 		function getCuentas() {
-			AsientoService.getCuentas()
+			CuentasService.getCuentas()
 			.then(function(response) {
 				// MANEJO DE RESPUESTA
 
@@ -15,7 +15,7 @@ angular.module('ProUrban')
 
 				if (response.codigo === 1) {
 					$scope.data = response.datos;
-          console.log('asientos:::', response.datos);
+          			console.log('asientos:::', response.datos);
 				} else {
 					alert(response.mensaje);
 				}

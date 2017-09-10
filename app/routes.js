@@ -39,7 +39,7 @@ angular.module('ProUrban')
 		})
 		.when('/cuentas', {
 			templateUrl: 'app/views/pages/administrador/cuentas.html',
-			controller: 'asientoController'
+			controller: 'cuentasController'
 		})
 		.when('/asientoContable', {
 			templateUrl: 'app/views/pages/administrador/asientoContable.html'

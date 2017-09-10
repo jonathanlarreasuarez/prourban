@@ -1,5 +1,5 @@
 angular.module('ProUrban')
-.factory("AsientoService", ['$soap', '$rootScope', 'localStorageService', 'AppConfig',
+.factory("CuentasService", ['$soap', '$rootScope', 'localStorageService', 'AppConfig',
 	function($soap, $rootScope, localStorageService, AppConfig) {
 
 		var service = {};
