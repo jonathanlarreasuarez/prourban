@@ -8,17 +8,29 @@ angular.module('ProUrban')
         $scope.proceso = 1;
         
         $scope.getAreas = getAreas;
+        $scope.getListaAreasInactivas = getListaAreasInactivas;
         $scope.insertarArea = insertarArea;
         $scope.modificarArea = modificarArea;
         $scope.eliminarArea = eliminarArea;
         $scope.buscarArea = buscarArea;
         
-        /*$scope.getInmuebles = getInmuebles;
-        $scope.insertarInmueble = insertarInmueble;
-        $scope.modificarInmueble = modificarInmueble;
-        $scope.eliminarInmueble = eliminarInmueble;
-        $scope.buscarInmueble = buscarInmueble;*/
-        
+         function getListaAreasInactivas(){
+            AreaService.getListaAreasInactivas()
+            .then(function(response) {
+                
+                console.log("Se ejecuto");
+                response = JSON.parse(response.respuesta);
+                
+                if(response.codigo === 1){
+                    $scope.data = response.datos;
+                } else {
+                    alert(response.mensaje);
+                    $location.path('/areas');
+                }
+            }, function(err){
+                
+            });
+        }
         
         function getAreas(){
             AreaService.getAreas()
@@ -100,6 +112,7 @@ angular.module('ProUrban')
 				// MANEJO DE ERRORES
 			});
 		}
+        
 
 		function buscarArea(id) {
             AreaService.buscarArea(id)
@@ -121,16 +134,15 @@ angular.module('ProUrban')
 				// MANEJO DE ERRORES
 			});
 		}
-
+        
 		//	Limpia los inputs de tipo text del formulario
 		function clearForm() {
 			$('#areaForm input[type="text"]').val("");
 		}
 
-        //$scope.getAreas();
+    
         $scope.getAreas();
-        //$scope.getInmuebles();
-		//$scope.getProveedores();
+        
 
 	}
 ]);

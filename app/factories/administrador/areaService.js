@@ -5,15 +5,21 @@ angular.module('ProUrban')
         var service = {};
         
         service.getAreas = getAreas;
+        service.getListaAreasInactivas = getListaAreasInactivas;
         service.insertarArea = insertarArea;
         service.modificarArea = modificarArea;
         service.eliminarArea = eliminarArea;
         service.buscarArea = buscarArea;
+        service.cambiarEstadoArea = cambiarEstadoArea;
         
         return service;
         
         function getAreas(){
             return $soap.post(AppConfig.apiUrl, "ListaAreas");
+        }
+        
+        function getListaAreasInactivas(){
+            return $soap.post(AppConfig.apiUrl, "ListaAreasInactivas");
         }
 
 		function insertarArea(descripcion, valor, estado){
@@ -44,5 +50,12 @@ angular.module('ProUrban')
 			return $soap.post(AppConfig.apiUrl, "EliminarArea",
 				{ id: id });
 		}
+        
+        function cambiarEstadoArea(id) {
+            
+            return $soap.post(AppConfig.apiUrl, "CambiarEstadoArea",
+                { id: id });
+        }
+        
 
 }]);

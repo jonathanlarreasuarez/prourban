@@ -1,0 +1,54 @@
+<div menu></div>
+<div header></div>
+<!-- page content -->
+<div class="right_col" role="main">
+	<div class="row">
+		<!--<div class="col-md-6 col-xs-12">-->
+            <div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="x_panel">
+				<div class="x_title">   
+                    <h2>Áreas Inactivas</h2>
+                        <!--<small float="right"><a href="#!/insertararea">Agregar Nueva</a></small>-->
+                    <div class="nav navbar-right panel_toolbox">
+						<a href="#!/areas"><button type="button" class="btn btn-success">Volver</button></a>
+					</div>
+					<div class="clearfix"> </div>
+					<div class="x_content">
+						<div class="dashboard-widget-content">
+							<div class="col-md-12 col-xs-12">
+							<h2 class="line_30"></h2>
+							<br>
+							<table class="countries_list">
+								<thead>
+									<tr>
+										<td>Id</td>
+										<td><strong>Nombre de Área</strong></td>
+										<td class="fs15 fw700 text-right"><strong>Valor</strong></td>
+                                        <td><strong>Estado</strong></td>
+										<td class="text-center"><strong>Acciones</strong></td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr ng-repeat="item in data">
+										<td style="width:40px">{{item.id}}</td>
+										<td>{{item.descripcion}}</td>
+										<td class="fs15 fw700 text-right">{{item.valor}}</td>
+                                        <td>{{item.estado}}</td>
+										<td class="text-center">
+                                            <!--<a  class="btn btn-primary" type="submit" ng-click="buscarArea(item.id)"  href="#!/modificararea">Editar</a>-->
+											<!--<button class="btn btn-danger" ng-click="cambiarEstadoArea(item.id)">Activar</button>-->
+                                            <button  class="btn btn-primary" ng-click="cambiarEstadoArea(item.id)">Activar</button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+<!-- /page content -->
+<div footer></div>

@@ -48,6 +48,10 @@ angular.module('ProUrban')
 			templateUrl: 'app/views/pages/administrador/areas.html',
 			controller: 'areaController'
 		})
+                .when('/areasinactivas', {
+                       templateUrl: 'app/views/pages/administrador/areasinactivas.html',
+                       controller: 'areasController'
+                })
          .when('/insertararea', {
 			templateUrl: 'app/views/pages/administrador/agregarareas.html',
 			controller: 'areaController'
