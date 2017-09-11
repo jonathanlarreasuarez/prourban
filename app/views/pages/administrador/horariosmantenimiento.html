@@ -1,0 +1,111 @@
+<div menu></div>
+<div header></div>
+<!-- page content -->
+<div class="right_col" role="main">
+	<div class="row">
+		<!--<div class="col-md-6 col-xs-12">-->
+            <div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="x_panel">
+				<div class="x_title">   
+                 <!--  <div class="clearfix"></div>
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                      <h2>Agregar <small>nueva</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>-->
+					<!--<h2>Listados de Proveedores<small float="right"><a href="#!/proveedores2">Agregar Nueva</a></small></h2>-->
+                    <h2>Listado de Horarios de Mantenimiento</h2>
+                        <!--<h2><small float="right"><a href="#!/insertarhorariomantenimiento">Agregar Nuevo</a></small></h2>-->
+                    <div class="nav navbar-right panel_toolbox">
+						<a href="#!/insertarhorariomantenimiento"><button type="button" class="btn btn-success">Añadir Nuevo</button></a>
+					</div>
+					<div class="clearfix"> </div>
+					<div class="x_content">
+						<div class="dashboard-widget-content">
+							<div class="col-md-12 col-xs-12">
+							<h2 class="line_30"></h2>
+							<br>
+							<table class="countries_list">
+								<thead>
+									<tr>
+										<td>Id</td>
+										<td><strong>Dias</strong></td>
+										<td class="fs15 fw700 text-right"><strong>Desde</strong></td>
+                                        <td class="fs15 fw700 text-right"><strong>Hasta</strong></td>
+                                        <td class="fs15 fw700 text-right"><strong>Área</strong></td>
+                                        <td class="fs15 fw700 text-right"><strong>Estado</strong></td>
+										<td class="text-center"><strong>Acciones</strong></td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr ng-repeat="item in data">
+										<td style="width:40px">{{item.id}}</td>
+										<td>{{item.dias}}</td>
+										<td class="fs15 fw700 text-right">{{item.desde}}</td>
+                                        <td class="fs15 fw700 text-right">{{item.hasta}}</td>
+                                        <td class="fs15 fw700 text-right">{{item.area}}</td>
+                                        <td class="fs15 fw700 text-right">{{item.estado}}</td>
+										<td class="text-center">
+											  <a  class="btn btn-primary" type="submit" ng-click="buscarHorariomantenimiento(item.id)"  href="#!/modificarhorariomantenimiento">Editar</a>
+                                            <!--<button class="btn btn-primary" ng-click="buscarHorariomantenimiento(item.id)">Editar</button>-->
+											<button class="btn btn-danger" ng-click="eliminarHorariomantenimiento(item.id)">Eliminar</button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--<div class="col-md-6 col-xs-12">
+		<div class="x_panel">
+			<div class="x_title">
+				<h2>Añadir Proveedores</h2>
+				<ul class="nav navbar-right panel_toolbox">
+					<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+				</ul>
+				<div class="clearfix"></div>
+			</div>
+			<div class="x_content">
+				<br />
+				<form novalidate id="proveedorForm" class="form-horizontal form-label-left" ng-submit="insertarProveedor()">
+					<div class="form-group">
+						<label class="control-label col-md-3 col-sm-3 col-xs-12">Nombre de Proveedor</label>
+						<div class="col-md-9 col-sm-9 col-xs-12">
+					  		<input id="descripcion" type="text" class="form-control" placeholder="Nombre de Proveedor" ng-model="descripcion">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3 col-sm-3 col-xs-12">RUC</label>
+						<div class="col-md-9 col-sm-9 col-xs-12">
+							<input id="ruc" type="text" class="form-control" placeholder="RUC" ng-model="ruc">
+						</div>
+					</div>
+					<div class="ln_solid"></div>
+					<div class="form-group">
+						<div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+							<button type="button" class="btn btn-primary">Cancel</button>
+							<button type="reset" class="btn btn-primary">Reset</button>
+							<input type="submit" class="btn btn-success" value="Guardar"/>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>-->
+
+
+</div>
+<!-- /page content -->
+<div footer></div>

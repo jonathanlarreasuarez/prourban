@@ -44,6 +44,109 @@ angular.module('ProUrban')
 		.when('/asientoContable', {
 			templateUrl: 'app/views/pages/administrador/asientoContable.html'
 		})
+		.when('/areas', {
+			templateUrl: 'app/views/pages/administrador/areas.html',
+			controller: 'areaController'
+		})
+         .when('/insertararea', {
+			templateUrl: 'app/views/pages/administrador/agregarareas.html',
+			controller: 'areaController'
+		})
+         .when('/modificararea', {
+			templateUrl: 'app/views/pages/administrador/modificarareas.html',
+			controller: 'areaController'
+		})
+        .when('/inmuebles', {
+			templateUrl: 'app/views/pages/administrador/inmuebles.html',
+			controller: 'inmuebleController'
+		})
+        .when('/insertarinmueble', {
+			templateUrl: 'app/views/pages/administrador/agregarinmuebles.html',
+			controller: 'inmuebleController'
+		})
+         .when('/modificarinmueble', {
+			templateUrl: 'app/views/pages/administrador/modificarinmueble.html',
+			controller: 'inmuebleController'
+		})
+         .when('/horariosmantenimiento', {
+			templateUrl: 'app/views/pages/administrador/horariosmantenimiento.html',
+			controller: 'horariomantenimientoController'
+		})
+         .when('/insertarhorariomantenimiento', {
+			templateUrl: 'app/views/pages/administrador/insertarhorariomantenimiento.html',
+			controller: 'horariomantenimientoController'
+		})
+         .when('/modificarhorariomantenimiento', {
+			templateUrl: 'app/views/pages/administrador/modificarhorariomantenimiento.html',
+			controller: 'horariomantenimientoController'
+		})
+        
+        
+        
+        .when('/parametros', {
+			templateUrl: 'app/views/pages/administrador/parametros.html',
+			controller: 'parametroController'
+		})
+		.when('/parametrose', {
+			templateUrl: 'app/views/pages/administrador/parametrose.html',
+			controller: 'parametroeController'
+		})
+		.when('/insertarparametro', {
+			templateUrl: 'app/views/pages/administrador/agregarparametro.html',
+			controller: 'parametroController'
+		})
+		.when('/editarparametro', {
+			templateUrl: 'app/views/pages/administrador/editarparametro.html',
+			controller: 'parametroController'
+		})
+		.when('/usuarios', {
+			templateUrl: 'app/views/pages/administrador/usuarios.html',
+			controller: 'usuarioController'
+		})
+		.when('/insertarusuario', {
+			templateUrl: 'app/views/pages/administrador/agregarusuario.html',
+			controller: 'usuarioController'
+		})
+		.when('/editarusuario', {
+			templateUrl: 'app/views/pages/administrador/editarusuario.html',
+			controller: 'parametroController'
+		})
+		.when('/usuariose', {
+			templateUrl: 'app/views/pages/administrador/usuariose.html',
+			controller: 'usuarioeController'
+		})
+		.when('/conceptopagos', {
+			templateUrl: 'app/views/pages/administrador/conceptopagos.html',
+			controller: 'conceptopagoController'
+		})
+		.when('/conceptopagose', {
+			templateUrl: 'app/views/pages/administrador/conceptopagose.html',
+			controller: 'conceptopagoeController'
+		})
+		.when('/insertarconceptopago', {
+			templateUrl: 'app/views/pages/administrador/agregarconceptopago.html',
+			controller: 'conceptopagoController'
+		})
+		.when('/editarconceptopago', {
+			templateUrl: 'app/views/pages/administrador/editarconceptopago.html',
+			controller: 'conceptopagoController'
+		})
+		.when('/formapagos', {
+			templateUrl: 'app/views/pages/administrador/formapagos.html',
+			controller: 'formapagoController'
+		})
+		.when('/formapagose', {
+			templateUrl: 'app/views/pages/administrador/formapagose.html',
+			controller: 'formapagoeController'
+		})
+		.when('/insertarformapago', {
+			templateUrl: 'app/views/pages/administrador/agregarformapago.html',
+			controller: 'formapagoController'
+		})
+		.when('/editarformapago', {
+			templateUrl: 'app/views/pages/administrador/editarformapago.html',
+			controller: 'formapagoController'
+		})
 		.when('/404', {
 			templateUrl: 'app/views/pages/page_404.html'
 		})

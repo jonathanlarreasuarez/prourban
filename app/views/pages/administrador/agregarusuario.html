@@ -1,0 +1,113 @@
+<div menu></div>
+<div header></div>
+<!-- page content -->
+<div class="right_col" role="main">
+	
+	<div class="col-md-12 col-xs-12">
+		<div class="x_panel">
+			<div class="x_title">
+				<h2>Añadir Usuarios</h2>
+				<ul class="nav navbar-right panel_toolbox">
+					<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+				</ul>
+				<div class="clearfix"></div>
+			</div>
+			<div class="x_content">
+				<br />
+				<form novalidate id="usuarioForm" class="form-horizontal form-label-left" ng-submit="insertarUsuario()">
+					<div class="form-group">
+						<label class="control-label col-md-3 col-sm-3 col-xs-12">Usuario</label>
+						<div class="col-md-9 col-sm-9 col-xs-12">
+					  		<input id="nombre_usuario" type="text" class="form-control" placeholder="" ng-model="nombre_usuario">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3 col-sm-3 col-xs-12">Clave</label>
+						<div class="col-md-9 col-sm-9 col-xs-12">
+							<input id="clave" type="password" class="form-control" placeholder="" ng-model="clave">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3 col-sm-3 col-xs-12">Cedula</label>
+						<div class="col-md-9 col-sm-9 col-xs-12">
+							<input id="cedula" type="text" class="form-control" placeholder="" ng-model="cedula">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3 col-sm-3 col-xs-12">Primer Nombre</label>
+						<div class="col-md-9 col-sm-9 col-xs-12">
+							<input id="primer_nombre" type="text" class="form-control" placeholder="" ng-model="primer_nombre">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3 col-sm-3 col-xs-12">Segundo Nombre</label>
+						<div class="col-md-9 col-sm-9 col-xs-12">
+							<input id="segundo_nombre" type="text" class="form-control" placeholder="" ng-model="segundo_nombre">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3 col-sm-3 col-xs-12">Primer Apellido</label>
+						<div class="col-md-9 col-sm-9 col-xs-12">
+							<input id="primer_apellido" type="text" class="form-control" placeholder="" ng-model="primer_apellido">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3 col-sm-3 col-xs-12">Segundo Apellido</label>
+						<div class="col-md-9 col-sm-9 col-xs-12">
+							<input id="segundo_apellido" type="text" class="form-control" placeholder="" ng-model="segundo_apellido">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3 col-sm-3 col-xs-12">Telefono</label>
+						<div class="col-md-9 col-sm-9 col-xs-12">
+							<input id="telefono" type="text" class="form-control" placeholder="" ng-model="telefono">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3 col-sm-3 col-xs-12">Correo</label>
+						<div class="col-md-9 col-sm-9 col-xs-12">
+							<input id="correo" type="email" class="form-control" placeholder="" ng-model="correo">
+						</div>
+					</div>
+
+					<div class="form-group">
+								<label class="control-label col-md-3 col-sm-3 col-xs-12">Rol</label>
+								<div class="col-md-9 col-sm-9 col-xs-12">
+									<select class="select2_single form-control" tabindex="-1">
+										
+										<option selected="selected" value="2">Residente</option>
+										<option value="3" disabled>Administrados</option>
+										<option value="4" disabled>Presidente</option>
+									</select>
+								</div>
+					</div>
+					<div class="form-group">
+								<label class="control-label col-md-3 col-sm-3 col-xs-12">Estado</label>
+								<div class="col-md-9 col-sm-9 col-xs-12">
+									<select class="select2_single form-control" tabindex="-1">
+										
+										<option selected="selected" value="ACTIVO">Activo</option>
+										<option disabled value="INACTIVO">Inactivo</option>
+										
+									</select>
+								</div>
+					</div>
+
+					<div class="ln_solid"></div>
+					<div class="form-group">
+						<div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+							
+						<a href="#!/usuarios" class=""><button type="button" class="btn btn-warnig">Cancel</button></a>
+							<button type="reset" class="btn btn-primary">Reset</button>
+							<input type="submit" class="btn btn-success" value="Guardar"/>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- /page content -->
+<div footer></div>
