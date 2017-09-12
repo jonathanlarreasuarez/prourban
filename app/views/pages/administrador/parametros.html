@@ -1,0 +1,58 @@
+<div menu></div>
+<div header></div>
+<!-- page content -->
+<div class="right_col" role="main">
+	<div class="row">
+		<!--<div class="col-md-6 col-xs-12">-->
+            <div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="x_panel">
+				<div class="x_title">   
+                    <h2>Listados de Parámetros</h2>
+                        <!--<small float="right"><a href="#!/insertararea">Agregar Nueva</a></small>-->
+                  
+					<a href="#!/parametrose" class="navbar-right"><button type="button" click-on="getParametrose()" class="btn btn-warning">Parámetros Eliminados</button></a>
+					<a href="#!/insertarparametro" class="navbar-right"><button type="button" class="btn btn-success">Añadir Nuevo</button></a>
+
+
+
+					<div class="clearfix"> </div>
+					<div class="x_content">
+						<div class="dashboard-widget-content">
+							<div class="col-md-12 col-xs-12">
+							<h2 class="line_30"></h2>
+							<br>
+							<table class="countries_list">
+								<thead>
+									<tr>
+										<td>Id</td>
+										<td><strong>Nombre de Parámetro</strong></td>
+										<td class="fs15 fw700 text-right"><strong>Valor</strong></td>
+                                        <td><strong>Estado</strong></td>
+										<td class="text-center"><strong>Acciones</strong></td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr ng-repeat="item in data">
+										<td style="width:40px">{{item.id}}</td>
+										<td>{{item.descripcion}}</td>
+										<td class="fs15 fw700 text-right">{{item.valor}}</td>
+                                        <td>{{item.estado}}</td>
+										<td class="text-center">
+											<a  class="btn btn-primary" type="submit" ng-click="buscarParametro(item.id)" href="#!/editarparametro">Editar</a>
+											<button class="btn btn-danger" ng-click="eliminarParametro(item.id)">Eliminar</button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- /page content -->
+<div footer></div>
+

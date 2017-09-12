@@ -1,0 +1,57 @@
+<div menu></div>
+<div header></div>
+<!-- page content -->
+<div class="right_col" role="main">
+	<div class="row">
+		<!--<div class="col-md-6 col-xs-12">-->
+            <div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="x_panel">
+				<div class="x_title">   
+                    <h2>Conceptos de pago desactivados</h2>
+
+
+
+					<a href="#!/conceptopagos" class="navbar-right"><button type="button" class="btn btn-warning">Volver</button></a>
+            
+
+
+					<div class="clearfix"> </div>
+					<div class="x_content">
+						<div class="dashboard-widget-content">
+							<div class="col-md-12 col-xs-12">
+							<h2 class="line_30"></h2>
+							<br>
+							<table class="countries_list">
+								<thead>
+									<tr>
+										<td><strong>Id</strong></td>
+										<td><strong>Nombre de Concepto de pago</strong></td>
+                                        <td><strong>Estado</strong></td>
+										<td class="text-center"><strong>Acciones</strong></td>
+									</tr>
+								</thead>
+								
+								<tbody>
+									<tr ng-repeat="item in data">
+										<td style="width:40px">{{item.id}}</td>
+										<td>{{item.descripcion}}</td>
+                                        <td>{{item.estado}}</td>
+										<td class="text-center">
+											<button  class="btn btn-primary" ng-click="activarConceptopago(item.id)">Activar</button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- /page content -->
+<div footer></div>
+
