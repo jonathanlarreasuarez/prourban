@@ -42,7 +42,8 @@ angular.module('ProUrban')
 			controller: 'cuentasController'
 		})
 		.when('/asientoContable', {
-			templateUrl: 'app/views/pages/administrador/asientoContable.html'
+			templateUrl: 'app/views/pages/administrador/asientoContable.html',
+			controller: 'asientoController'
 		})
 		.when('/areas', {
 			templateUrl: 'app/views/pages/administrador/areas.html',
