@@ -105,19 +105,19 @@ angular.module('ProUrban')
 			controller: 'parametroController'
 		})
 		.when('/usuarios', {
-			templateUrl: 'app/views/pages/administrador/usuarios.html',
+			templateUrl: 'app/views/pages/administrador/usuario/usuarios.html',
 			controller: 'usuarioController'
 		})
 		.when('/insertarusuario', {
-			templateUrl: 'app/views/pages/administrador/agregarusuario.html',
+			templateUrl: 'app/views/pages/administrador/usuario/agregarusuario.html',
 			controller: 'usuarioController'
 		})
 		.when('/editarusuario', {
-			templateUrl: 'app/views/pages/administrador/editarusuario.html',
+			templateUrl: 'app/views/pages/administrador/usuario/editarusuario.html',
 			controller: 'parametroController'
 		})
 		.when('/usuariose', {
-			templateUrl: 'app/views/pages/administrador/usuariose.html',
+			templateUrl: 'app/views/pages/administrador/usuario/usuariose.html',
 			controller: 'usuarioeController'
 		})
 		.when('/conceptopagos', {
