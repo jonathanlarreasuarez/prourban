@@ -151,7 +151,27 @@ angular.module('ProUrban')
 		.when('/editarformapago', {
 			templateUrl: 'app/views/pages/administrador/editarformapago.html',
 			controller: 'formapagoController'
+		})//seguridad
+		.when('/rol', {
+			templateUrl: 'app/views/pages/administrador/rol.html',
+			controller: 'rolController'
 		})
+		.when('/crearRol', {
+			templateUrl: 'app/views/pages/administrador/crearRol.html',
+			controller: 'rolController'
+		})
+		.when('/usuarioseg', {
+			templateUrl: 'app/views/pages/administrador/usuarioseg.html',
+			controller: 'usuarioSegController'
+		})
+		.when('/crearUsuario', {
+			templateUrl: 'app/views/pages/administrador/crearUsuario.html',
+			controller: 'usuarioSegController'
+		})
+		.when('/opcionrol', {
+			templateUrl: 'app/views/pages/administrador/opcionrol.html',
+			controller: 'opcionrolController'
+		})//seguridad
 		.when('/404', {
 			templateUrl: 'app/views/pages/page_404.html'
 		})
