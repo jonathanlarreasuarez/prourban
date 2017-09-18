@@ -102,19 +102,19 @@ angular.module('ProUrban')
 			controller: 'parametroController'
 		})
 		.when('/usuarios', {
-			templateUrl: 'app/views/pages/administrador/usuarios.html',
+			templateUrl: 'app/views/pages/administrador/usuario/usuarios.html',
 			controller: 'usuarioController'
 		})
 		.when('/insertarusuario', {
-			templateUrl: 'app/views/pages/administrador/agregarusuario.html',
+			templateUrl: 'app/views/pages/administrador/usuario/agregarusuario.html',
 			controller: 'usuarioController'
 		})
 		.when('/editarusuario', {
-			templateUrl: 'app/views/pages/administrador/editarusuario.html',
+			templateUrl: 'app/views/pages/administrador/usuario/editarusuario.html',
 			controller: 'parametroController'
 		})
 		.when('/usuariose', {
-			templateUrl: 'app/views/pages/administrador/usuariose.html',
+			templateUrl: 'app/views/pages/administrador/usuario/usuariose.html',
 			controller: 'usuarioeController'
 		})
 		.when('/conceptopagos', {
@@ -148,7 +148,27 @@ angular.module('ProUrban')
 		.when('/editarformapago', {
 			templateUrl: 'app/views/pages/administrador/editarformapago.html',
 			controller: 'formapagoController'
+		})//seguridad
+		.when('/rol', {
+			templateUrl: 'app/views/pages/administrador/rol.html',
+			controller: 'rolController'
 		})
+		.when('/crearRol', {
+			templateUrl: 'app/views/pages/administrador/crearRol.html',
+			controller: 'rolController'
+		})
+		.when('/usuarioseg', {
+			templateUrl: 'app/views/pages/administrador/usuarioseg.html',
+			controller: 'usuarioSegController'
+		})
+		.when('/crearUsuario', {
+			templateUrl: 'app/views/pages/administrador/crearUsuario.html',
+			controller: 'usuarioSegController'
+		})
+		.when('/opcionrol', {
+			templateUrl: 'app/views/pages/administrador/opcionrol.html',
+			controller: 'opcionrolController'
+		})//seguridad
 		.when('/404', {
 			templateUrl: 'app/views/pages/page_404.html'
 		})
