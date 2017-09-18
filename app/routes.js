@@ -49,46 +49,43 @@ angular.module('ProUrban')
 			templateUrl: 'app/views/pages/administrador/areas.html',
 			controller: 'areaController'
 		})
-                .when('/areasinactivas', {
-                       templateUrl: 'app/views/pages/administrador/areasinactivas.html',
-                       controller: 'areasController'
-                })
-         .when('/insertararea', {
+		.when('/areasinactivas', {
+			templateUrl: 'app/views/pages/administrador/areasinactivas.html',
+			controller: 'areasController'
+		})
+		 .when('/insertararea', {
 			templateUrl: 'app/views/pages/administrador/agregarareas.html',
 			controller: 'areaController'
 		})
-         .when('/modificararea', {
+		 .when('/modificararea', {
 			templateUrl: 'app/views/pages/administrador/modificarareas.html',
 			controller: 'areaController'
 		})
-        .when('/inmuebles', {
+		.when('/inmuebles', {
 			templateUrl: 'app/views/pages/administrador/inmuebles.html',
 			controller: 'inmuebleController'
 		})
-        .when('/insertarinmueble', {
+		.when('/insertarinmueble', {
 			templateUrl: 'app/views/pages/administrador/agregarinmuebles.html',
 			controller: 'inmuebleController'
 		})
-         .when('/modificarinmueble', {
+		 .when('/modificarinmueble', {
 			templateUrl: 'app/views/pages/administrador/modificarinmueble.html',
 			controller: 'inmuebleController'
 		})
-         .when('/horariosmantenimiento', {
+		 .when('/horariosmantenimiento', {
 			templateUrl: 'app/views/pages/administrador/horariosmantenimiento.html',
 			controller: 'horariomantenimientoController'
 		})
-         .when('/insertarhorariomantenimiento', {
+		 .when('/insertarhorariomantenimiento', {
 			templateUrl: 'app/views/pages/administrador/insertarhorariomantenimiento.html',
 			controller: 'horariomantenimientoController'
 		})
-         .when('/modificarhorariomantenimiento', {
+		 .when('/modificarhorariomantenimiento', {
 			templateUrl: 'app/views/pages/administrador/modificarhorariomantenimiento.html',
 			controller: 'horariomantenimientoController'
 		})
-        
-        
-        
-        .when('/parametros', {
+		.when('/parametros', {
 			templateUrl: 'app/views/pages/administrador/parametros.html',
 			controller: 'parametroController'
 		})
